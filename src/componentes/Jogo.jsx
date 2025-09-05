@@ -15,20 +15,21 @@ export default function Jogo() {
     );
     const [historicoJogadas, setHistoricoJogadas] = useState([])
 
-    function fimJogo(tab) {
-        if (tab[0] != null && tab[0] == tab[1] && tab[0] == tab[2]) { return tab[0] }
-        if (tab[3] != null && tab[3] == tab[4] && tab[3] == tab[5]) { return tab[3] }
-        if (tab[6] != null && tab[6] == tab[7] && tab[6] == tab[8]) { return tab[6] }
+   function fimJogo(tab) {
+    if (tab[0] !== null && tab[0] === tab[1] && tab[0] === tab[2]) return tab[0];
+    if (tab[3] !== null && tab[3] === tab[4] && tab[3] === tab[5]) return tab[3];
+    if (tab[6] !== null && tab[6] === tab[7] && tab[6] === tab[8]) return tab[6];
 
-        if (tab[0] != null && tab[0] == tab[3] && tab[0] == tab[6]) { return tab[0] }
-        if (tab[1] != null && tab[1] == tab[4] && tab[1] == tab[7]) { return tab[0] }
-        if (tab[2] != null && tab[2] == tab[5] && tab[2] == tab[8]) { return tab[0] }
+    if (tab[0] !== null && tab[0] === tab[3] && tab[0] === tab[6]) return tab[0];
+    if (tab[1] !== null && tab[1] === tab[4] && tab[1] === tab[7]) return tab[1];
+    if (tab[2] !== null && tab[2] === tab[5] && tab[2] === tab[8]) return tab[2];
 
-        if (tab[0] != null && tab[0] == tab[4] && tab[0] == tab[8]) { return tab[0] }
-        if (tab[2] != null && tab[2] == tab[4] && tab[2] == tab[6]) { return tab[2] }
+    if (tab[0] !== null && tab[0] === tab[4] && tab[0] === tab[8]) return tab[0];
+    if (tab[2] !== null && tab[2] === tab[4] && tab[2] === tab[6]) return tab[2];
 
-        return null;
-    }
+    return null;
+}
+
 
     function empateJogo(tab) {
         const tabCheio = tab.every(celula => celula !== null);
@@ -46,7 +47,7 @@ export default function Jogo() {
 
             estadoNovo[pos] = vez;
 
-            if (vez === 'x') {
+            if (vez == 'x') {
                 vez = 'o';
             } else {
                 vez = 'x';
