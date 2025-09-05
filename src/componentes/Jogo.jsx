@@ -46,7 +46,7 @@ export default function Jogo() {
 
             estadoNovo[pos] = vez;
 
-            if (vez == 'x') {
+            if (vez === 'x') {
                 vez = 'o';
             } else {
                 vez = 'x';
